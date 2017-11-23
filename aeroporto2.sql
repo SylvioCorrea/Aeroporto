@@ -1,0 +1,543 @@
+CREATE TABLE AEROPORTO (
+ Nome VARCHAR(255) NOT NULL
+);
+
+ALTER TABLE AEROPORTO ADD CONSTRAINT PK_AEROPORTO PRIMARY KEY (Nome);
+
+
+CREATE TABLE AVIAO (
+ Identificacao CHAR(8) NOT NULL,
+ Modelo VARCHAR(255),
+ Autonomia FLOAT,
+ Capacidade INT,
+ Tanque FLOAT
+);
+
+ALTER TABLE AVIAO ADD CONSTRAINT PK_AVIAO PRIMARY KEY (Identificacao);
+
+
+CREATE TABLE CARGA (
+ ID_carga CHAR(8) NOT NULL,
+ Peso FLOAT,
+ Aviao_id CHAR(8)
+);
+
+ALTER TABLE CARGA ADD CONSTRAINT PK_CARGA PRIMARY KEY (ID_carga);
+
+
+CREATE TABLE EMPRESA_AEREA (
+ CNPJ INT NOT NULL,
+ Nome VARCHAR(255),
+ Sigla CHAR(3)
+);
+
+ALTER TABLE EMPRESA_AEREA ADD CONSTRAINT PK_EMPRESA_AEREA PRIMARY KEY (CNPJ);
+
+
+CREATE TABLE ENDERECO (
+ Nome VARCHAR(255) NOT NULL,
+ Cpf CHAR(11) NOT NULL,
+ Estado CHAR(2),
+ Cidade VARCHAR(255),
+ Rua VARCHAR(255),
+ Bairro VARCHAR(255),
+ Numero INT,
+ Complemento CHAR(10),
+ CEP CHAR(8)
+);
+
+ALTER TABLE ENDERECO ADD CONSTRAINT PK_ENDERECO PRIMARY KEY (Nome,Cpf);
+
+
+CREATE TABLE PESSOA (
+ Cpf CHAR(11) NOT NULL,
+ Nome VARCHAR(255),
+ Idade INT,
+ RG CHAR(9),
+ Sexo CHAR(1),
+ Peso FLOAT,
+ Telefone CHAR(13)
+);
+
+ALTER TABLE PESSOA ADD CONSTRAINT PK_PESSOA PRIMARY KEY (Cpf);
+
+
+CREATE TABLE PROFISSIONAL_DE_BORDO (
+ ID_profissional CHAR(8) NOT NULL,
+ Cpf CHAR(11) NOT NULL,
+ Categoria CHAR(10)
+);
+
+ALTER TABLE PROFISSIONAL_DE_BORDO ADD CONSTRAINT PK_PROFISSIONAL_DE_BORDO PRIMARY KEY (ID_profissional,Cpf);
+
+
+CREATE TABLE TERMINAL (
+ Portao INT NOT NULL,
+ Nome VARCHAR(255) NOT NULL,
+ Capacidade_voos INT
+);
+
+ALTER TABLE TERMINAL ADD CONSTRAINT PK_TERMINAL PRIMARY KEY (Portao,Nome);
+
+
+CREATE TABLE VOO (
+ ID_voo CHAR(8) NOT NULL,
+ Origem VARCHAR(255),
+ Destino VARCHAR(255),
+ Escala VARCHAR(255)
+);
+
+ALTER TABLE VOO ADD CONSTRAINT PK_VOO PRIMARY KEY (ID_voo);
+
+
+CREATE TABLE FUNCIONARIO (
+ ID_funcionario INT NOT NULL,
+ Cpf CHAR(11) NOT NULL
+);
+
+ALTER TABLE FUNCIONARIO ADD CONSTRAINT PK_FUNCIONARIO PRIMARY KEY (ID_funcionario,Cpf);
+
+
+CREATE TABLE PASSAGEIRO (
+ Cpf CHAR(11) NOT NULL,
+ Visto CHAR(10),
+ Nro_Passaporte CHAR(10) NOT NULL
+);
+
+ALTER TABLE PASSAGEIRO ADD CONSTRAINT PK_PASSAGEIRO PRIMARY KEY (Cpf);
+
+
+CREATE TABLE PASSAGEM_AEREA (
+ ID_passagem INT NOT NULL,
+ ID_voo CHAR(8) NOT NULL,
+ Cpf CHAR(11) NOT NULL,
+ Origem CHAR(10),
+ Destino CHAR(10),
+ Terminal INT,
+ Cia_aerea CHAR(10),
+ Assento CHAR(10),
+ Classe CHAR(10)
+);
+
+ALTER TABLE PASSAGEM_AEREA ADD CONSTRAINT PK_PASSAGEM_AEREA PRIMARY KEY (ID_passagem,ID_voo,Cpf);
+
+
+CREATE TABLE TRIPULACAO (
+ ID_voo_0 CHAR(8) NOT NULL,
+ Cpf CHAR(11) NOT NULL,
+ ID_profissional_0 CHAR(8) NOT NULL,
+ ID_voo INT,
+ Local_embarque VARCHAR(255),
+ Local_desembarque VARCHAR(255)
+);
+
+ALTER TABLE TRIPULACAO ADD CONSTRAINT PK_TRIPULACAO PRIMARY KEY (ID_voo_0,Cpf,ID_profissional_0);
+
+
+CREATE TABLE VINCULO (
+ Nome VARCHAR(255) NOT NULL,
+ Cpf CHAR(11) NOT NULL,
+ ID_funcionario INT NOT NULL,
+ ID_Contrato INT,
+ Categoria CHAR(10),
+ Salario FLOAT,
+ Turno CHAR(10)
+);
+
+ALTER TABLE VINCULO ADD CONSTRAINT PK_VINCULO PRIMARY KEY (Nome,Cpf,ID_funcionario);
+
+
+CREATE TABLE BAGAGEM (
+ Bagagem_id INT NOT NULL,
+ Cpf CHAR(11) NOT NULL,
+ ID_carga CHAR(8) NOT NULL,
+ Peso FLOAT
+);
+
+ALTER TABLE BAGAGEM ADD CONSTRAINT PK_BAGAGEM PRIMARY KEY (Bagagem_id,Cpf,ID_carga);
+
+
+ALTER TABLE ENDERECO ADD CONSTRAINT FK_ENDERECO_0 FOREIGN KEY (Nome) REFERENCES AEROPORTO (Nome);
+ALTER TABLE ENDERECO ADD CONSTRAINT FK_ENDERECO_1 FOREIGN KEY (Cpf) REFERENCES PESSOA (Cpf);
+
+
+ALTER TABLE PROFISSIONAL_DE_BORDO ADD CONSTRAINT FK_PROFISSIONAL_DE_BORDO_0 FOREIGN KEY (Cpf) REFERENCES PESSOA (Cpf);
+
+
+ALTER TABLE TERMINAL ADD CONSTRAINT FK_TERMINAL_0 FOREIGN KEY (Nome) REFERENCES AEROPORTO (Nome);
+
+
+ALTER TABLE FUNCIONARIO ADD CONSTRAINT FK_FUNCIONARIO_0 FOREIGN KEY (Cpf) REFERENCES PESSOA (Cpf);
+
+
+ALTER TABLE PASSAGEIRO ADD CONSTRAINT FK_PASSAGEIRO_0 FOREIGN KEY (Cpf) REFERENCES PESSOA (Cpf);
+
+
+ALTER TABLE PASSAGEM_AEREA ADD CONSTRAINT FK_PASSAGEM_AEREA_0 FOREIGN KEY (ID_voo) REFERENCES VOO (ID_voo);
+ALTER TABLE PASSAGEM_AEREA ADD CONSTRAINT FK_PASSAGEM_AEREA_1 FOREIGN KEY (Cpf) REFERENCES PASSAGEIRO (Cpf);
+
+
+ALTER TABLE TRIPULACAO ADD CONSTRAINT FK_TRIPULACAO_0 FOREIGN KEY (ID_voo_0) REFERENCES VOO (ID_voo);
+ALTER TABLE TRIPULACAO ADD CONSTRAINT FK_TRIPULACAO_1 FOREIGN KEY (Cpf,ID_profissional_0) REFERENCES PROFISSIONAL_DE_BORDO (Cpf,ID_profissional);
+
+
+ALTER TABLE VINCULO ADD CONSTRAINT FK_VINCULO_0 FOREIGN KEY (Nome) REFERENCES AEROPORTO (Nome);
+ALTER TABLE VINCULO ADD CONSTRAINT FK_VINCULO_1 FOREIGN KEY (Cpf,ID_funcionario) REFERENCES FUNCIONARIO (Cpf,ID_funcionario);
+
+
+ALTER TABLE BAGAGEM ADD CONSTRAINT FK_BAGAGEM_0 FOREIGN KEY (Cpf) REFERENCES PASSAGEIRO (Cpf);
+ALTER TABLE BAGAGEM ADD CONSTRAINT FK_BAGAGEM_1 FOREIGN KEY (ID_carga) REFERENCES CARGA (ID_carga);
+
+
+
+
+
+
+-- CHECK CONSTRAINTS
+
+
+ALTER TABLE FUNCIONARIO ADD CONSTRAINT maioridade CHECK (PESSOA.Idade > 14);
+
+ALTER TABLE VOO ADD CONSTRAINT capacidade CHECK (AVIAO.Capacidade >= (SELECT COUNT(ID_passagem) FROM PASSAGEM_AEREA WHERE ID_voo = VOO.ID_voo));
+
+ALTER TABLE VOO ADD CONSTRAINT origem CHECK (Origem <> Destino);
+
+
+
+
+-- CREATE UPDATE TRIGGER
+CREATE OR REPLACE TRIGGER atu_peso_carga
+  AFTER INSERT OR DELETE ON BAGAGEM
+  FOR EACH ROW
+  BEGIN
+    IF INSERTING THEN
+      UPDATE CARGA SET Peso = CARGA.Peso + :new.Peso
+      WHERE CARGA.ID_carga = :new.ID_carga;
+    END IF;
+    IF DELETING THEN
+      UPDATE CARGA SET Peso = CARGA.Peso - :old.Peso
+      WHERE CARGA.ID_carga = :old.ID_carga;
+    END IF;
+  END atu_peso_carga;
+/
+
+
+CREATE OR REPLACE TRIGGER ver_sexo
+BEFORE UPDATE ON PESSOA
+FOR EACH ROW
+BEGIN
+  IF :old.Sexo IN ('M') AND :new.Sexo IN ('F') THEN
+    Raise_application_error(-20001,'Sexo invalido');
+  END IF;
+  IF :old.Sexo IN ('F') AND :new.Sexo IN ('M') THEN
+    Raise_application_error(-20001,'Sexo invalido');
+  END IF;
+END ver_sexo;
+/
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO AEROPORTO VALUES('Salgado Filho');
+
+
+
+
+INSERT INTO CARGA VALUES('CK39KF39',50.0,'A3FR93KF');
+
+INSERT INTO CARGA VALUES('CK39KAS9',150.0,'ASDJS3KF');
+
+INSERT INTO CARGA VALUES('CKASKF39',30.0,'E30SDAKF');
+
+INSERT INTO CARGA VALUES('1239KF39',80.0,'9EJFKDAA');
+
+INSERT INTO CARGA VALUES('2239KF39',100.0,'389JHAIU');
+
+
+
+
+
+INSERT INTO EMPRESA_AEREA VALUES(19284950384950,'Latam','TAM');
+
+INSERT INTO EMPRESA_AEREA VALUES(12938182387612,'GOL','GOL');
+
+INSERT INTO EMPRESA_AEREA VALUES(12937182973181,'FlyUs','FLY');
+
+
+
+
+INSERT INTO ENDERECO VALUES('RS','Porto Alegre',null,null,null,null,null);
+
+INSERT INTO PESSOA VALUES('02512323981','Pedro Silva','18','943837482','M',80.0,'9820381921234');
+
+INSERT INTO PASSAGEIRO VALUES('02512323981','asd','asd');
+
+INSERT INTO BAGAGEM VALUES(12938,'02512323981','2239KF39',50.0);
+
+INSERT INTO PASSAGEM_AEREA VALUES(1022,'13631636','02512323981','Crissiumal','Cruzaltens',2,'Latammmmmm','0000000007','Economicaa');
+
+INSERT INTO PROFISSIONAL_DE_BORDO VALUES('AHS8D7SY','02512323981','Pilotooooo');
+
+INSERT INTO TERMINAL VALUES(2,'Salgado Filho',1);
+
+INSERT INTO TRIPULACAO VALUES('13631636','02512323981','AHS8D7SY',2,'Leste','Leste');
+
+INSERT INTO VINCULO VALUES('Salgado Filho','02512323981',1293,1221,'Assistente',3200.0,'Vespertino');
+
+
+
+
+
+
+INSERT INTO VOO VALUES('13631636','Crissiumal','Cruzaltense','Coronel Bicaco');
+
+INSERT INTO VOO VALUES('13494145','Chiapetta','Condor','Cacique Doble');
+
+INSERT INTO VOO VALUES('15241105','Capivari do Sul','Canudos do Vale','Coronel Barros');
+
+INSERT INTO VOO VALUES('15328658','Cotiporã','Capão do Leão','Campestre da Serra');
+
+INSERT INTO VOO VALUES('11206954','Campina das Missões','Capão do Cipó','Candiota');
+
+INSERT INTO VOO VALUES('11669853','Capitão','Coronel Barros','Cerro Grande do Sul');
+
+INSERT INTO VOO VALUES('19028516','Campo Bom','Coronel Pilar','Centenário');
+
+INSERT INTO VOO VALUES('17020179','Ciríaco','Capão da Canoa','Cambará do Sul');
+
+INSERT INTO VOO VALUES('16838898','Cacique Doble','Cerro Largo','Cristal do Sul');
+
+INSERT INTO VOO VALUES('14685957','Capão do Cipó','Chuvisca','Capela de Santana');
+
+INSERT INTO VOO VALUES('17687261','Coqueiros do Sul','Campinas do Sul','Campo Novo');
+
+INSERT INTO VOO VALUES('15288588','Cachoeirinha','Coronel Bicaco','Colinas');
+
+INSERT INTO VOO VALUES('15975008','Cambará do Sul','Coronel Barros','Cristal do Sul');
+
+INSERT INTO VOO VALUES('19916767','Capão do Cipó','Cerro Largo','Charqueadas');
+
+INSERT INTO VOO VALUES('15880224','Caçapava do Sul','Capão Bonito do Sul','Canoas');
+
+INSERT INTO VOO VALUES('10439727','Caxias do Sul','Crissiumal','Coronel Barros');
+
+INSERT INTO VOO VALUES('15511408','Coqueiro Baixo','Canela','Casca');
+
+INSERT INTO VOO VALUES('15881850','Cândido Godói','Coronel Pilar','Cerro Largo');
+
+INSERT INTO VOO VALUES('16385652','Coqueiros do Sul','Canudos do Vale','Condor');
+
+INSERT INTO VOO VALUES('19248661','Canguçu','Carlos Gomes','Cotiporã');
+
+INSERT INTO VOO VALUES('16079902','Capitão','Caraá','Canudos do Vale');
+
+INSERT INTO VOO VALUES('16436988','Cerro Grande','Coxilha','Cacique Doble');
+
+INSERT INTO VOO VALUES('19653355','Coronel Barros','Campestre da Serra','Chiapetta');
+
+INSERT INTO VOO VALUES('11408349','Cotiporã','Campo Bom','Coronel Pilar');
+
+INSERT INTO VOO VALUES('14813174','Capela de Santana','Cerrito','Campina das Missões');
+
+INSERT INTO VOO VALUES('15974968','Capão Bonito do Sul','Cristal','Cachoeira do Sul');
+
+INSERT INTO VOO VALUES('18537410','Cambará do Sul','Cidreira','Cerro Largo');
+
+INSERT INTO VOO VALUES('13763134','Carazinho','Capivari do Sul','Cambará do Sul');
+
+INSERT INTO VOO VALUES('13363887','Colinas','Cerro Largo','Cerro Branco');
+
+INSERT INTO VOO VALUES('16952203','Chuvisca','Chapada','Capela de Santana');
+
+INSERT INTO VOO VALUES('13739116','Cerro Grande','Canguçu','Capão da Canoa');
+
+INSERT INTO VOO VALUES('16852624','Carlos Gomes','Cristal','Cruzaltense');
+
+INSERT INTO VOO VALUES('17663024','Coqueiros do Sul','Cruzaltense','Cruzaltense');
+
+INSERT INTO VOO VALUES('10315200','Campestre da Serra','Canoas','Coronel Barros');
+
+INSERT INTO VOO VALUES('14945612','Cotiporã','Camaquã','Camargo');
+
+INSERT INTO VOO VALUES('18130469','Cotiporã','Centenário','Coronel Pilar');
+
+INSERT INTO VOO VALUES('15289967','Coqueiros do Sul','Coronel Bicaco','Coronel Bicaco');
+
+INSERT INTO VOO VALUES('11691419','Capão do Cipó','Candelária','Condor');
+
+INSERT INTO VOO VALUES('17004371','Cerro Largo','Carlos Barbosa','Campestre da Serra');
+
+INSERT INTO VOO VALUES('10254637','Chuvisca','Canoas','Constantina');
+
+INSERT INTO VOO VALUES('10746141','Cachoeirinha','Chiapetta','Caiçara');
+
+INSERT INTO VOO VALUES('10112062','Carazinho','Cachoeira do Sul','Carlos Gomes');
+
+INSERT INTO VOO VALUES('17280226','Condor','Catuípe','Cândido Godói');
+
+INSERT INTO VOO VALUES('10039496','Campo Bom','Cambará do Sul','Charrua');
+
+INSERT INTO VOO VALUES('15665959','Campinas do Sul','Coronel Pilar','Capão da Canoa');
+
+INSERT INTO VOO VALUES('10711881','Candelária','Constantina','Caibaté');
+
+INSERT INTO VOO VALUES('12309362','Cruzaltense','Catuípe','Crissiumal');
+
+INSERT INTO VOO VALUES('15111416','Canela','Campo Novo','Camargo');
+
+INSERT INTO VOO VALUES('10644074','Cachoeirinha','Cachoeirinha','Cacequi');
+
+INSERT INTO VOO VALUES('12238237','Cachoeira do Sul','Cerrito','Cristal do Sul');
+
+INSERT INTO VOO VALUES('16284074','Cruz Alta','Capão Bonito do Sul','Coronel Bicaco');
+
+INSERT INTO VOO VALUES('10245352','Coqueiros do Sul','Colorado','Campos Borges');
+
+INSERT INTO VOO VALUES('17002991','Carlos Barbosa','Capitão','Capão do Leão');
+
+INSERT INTO VOO VALUES('14169125','Cerrito','Cristal','Campos Borges');
+
+INSERT INTO VOO VALUES('12901944','Chuvisca','Carazinho','Cerrito');
+
+INSERT INTO VOO VALUES('11649911','Chuvisca','Carazinho','Caraá');
+
+INSERT INTO VOO VALUES('13631540','Campina das Missões','Crissiumal','Chiapetta');
+
+INSERT INTO VOO VALUES('13369351','Centenário','Campo Novo','Coronel Bicaco');
+
+INSERT INTO VOO VALUES('19758561','Cachoeirinha','Constantina','Cambará do Sul');
+
+INSERT INTO VOO VALUES('12339640','Cachoeira do Sul','Capela de Santana','Camaquã');
+
+INSERT INTO VOO VALUES('18766770','Campo Bom','Caxias do Sul','Charqueadas');
+
+INSERT INTO VOO VALUES('18697410','Charrua','Campinas do Sul','Cruz Alta');
+
+INSERT INTO VOO VALUES('15333473','Caraá','Campinas do Sul','Caibaté');
+
+INSERT INTO VOO VALUES('13184626','Capão da Canoa','Capão Bonito do Sul','Camargo');
+
+INSERT INTO VOO VALUES('10559441','Campestre da Serra','Cerro Largo','Capão do Cipó');
+
+INSERT INTO VOO VALUES('12072814','Catuípe','Chuí','Capela de Santana');
+
+INSERT INTO VOO VALUES('11425877','Cacique Doble','Catuípe','Cacique Doble');
+
+INSERT INTO VOO VALUES('19034223','Chiapetta','Camaquã','Caibaté');
+
+INSERT INTO VOO VALUES('14876238','Cerrito','Capão do Cipó','Cidreira');
+
+INSERT INTO VOO VALUES('13642456','Cerro Branco','Capão Bonito do Sul','Catuípe');
+
+INSERT INTO VOO VALUES('17735074','Coqueiro Baixo','Caxias do Sul','Carlos Gomes');
+
+INSERT INTO VOO VALUES('13214655','Ciríaco','Campos Borges','Carlos Barbosa');
+
+INSERT INTO VOO VALUES('10566024','Cristal','Coronel Bicaco','Cachoeira do Sul');
+
+INSERT INTO VOO VALUES('12652211','Colinas','Canela','Caxias do Sul');
+
+INSERT INTO VOO VALUES('12087095','Cambará do Sul','Charqueadas','Chiapetta');
+
+INSERT INTO VOO VALUES('16055375','Condor','Carlos Barbosa','Capão Bonito do Sul');
+
+INSERT INTO VOO VALUES('19417492','Cidreira','Campos Borges','Coronel Pilar');
+
+INSERT INTO VOO VALUES('15985238','Cachoeira do Sul','Capão da Canoa','Campos Borges');
+
+INSERT INTO VOO VALUES('12293063','Canoas','Cotiporã','Chapada');
+
+INSERT INTO VOO VALUES('19582697','Cruzaltense','Cruz Alta','Coqueiro Baixo');
+
+INSERT INTO VOO VALUES('12196759','Cotiporã','Candelária','Cruzaltense');
+
+INSERT INTO VOO VALUES('11973033','Cristal do Sul','Canela','Charqueadas');
+
+INSERT INTO VOO VALUES('16689026','Cidreira','Chuí','Camaquã');
+
+INSERT INTO VOO VALUES('12551570','Coqueiro Baixo','Condor','Cachoeirinha');
+
+INSERT INTO VOO VALUES('14250335','Campestre da Serra','Coronel Barros','Coqueiro Baixo');
+
+INSERT INTO VOO VALUES('17569691','Coqueiro Baixo','Cruzaltense','Capivari do Sul');
+
+INSERT INTO VOO VALUES('17923384','Carazinho','Caçapava do Sul','Cândido Godói');
+
+INSERT INTO VOO VALUES('19502562','Catuípe','Colorado','Coronel Barros');
+
+INSERT INTO VOO VALUES('18384636','Capão do Leão','Cacique Doble','Capela de Santana');
+
+INSERT INTO VOO VALUES('15592371','Camargo','Constantina','Charrua');
+
+INSERT INTO VOO VALUES('18654692','Caseiros','Candelária','Coxilha');
+
+INSERT INTO VOO VALUES('16595487','Carlos Barbosa','Charrua','Cerro Grande do Sul');
+
+INSERT INTO VOO VALUES('12249392','Campos Borges','Cerro Branco','Cândido Godói');
+
+INSERT INTO VOO VALUES('13473054','Cotiporã','Coqueiros do Sul','Carazinho');
+
+INSERT INTO VOO VALUES('12112928','Cristal','Cidreira','Cerro Grande');
+
+INSERT INTO VOO VALUES('16616388','Charqueadas','Ciríaco','Coronel Pilar');
+
+INSERT INTO VOO VALUES('14000546','Capão do Cipó','Camargo','Capão do Leão');
+
+INSERT INTO VOO VALUES('16805403','Coqueiros do Sul','Coqueiro Baixo','Cidreira');
+
+INSERT INTO VOO VALUES('17670957','Campo Bom','Colorado','Chiapetta');
+
+INSERT INTO VOO VALUES('17264208','Capão da Canoa','Catuípe','Caibaté');
+
+
+
+
+
+
+INSERT INTO AVIAO VALUES('23046292','R61',231,211,196);
+
+INSERT INTO AVIAO VALUES('25877604','P-1',263,2,253);
+
+INSERT INTO AVIAO VALUES('27085256','771',603,181,308);
+
+INSERT INTO AVIAO VALUES('29650896','771',159,213,272);
+
+INSERT INTO AVIAO VALUES('21847315','771',515,47,527);
+
+INSERT INTO AVIAO VALUES('28337197','771',130,45,321);
+
+INSERT INTO AVIAO VALUES('27783467','661',488,57,406);
+
+INSERT INTO AVIAO VALUES('25924059','1231',535,34,388);
+
+INSERT INTO AVIAO VALUES('25774599','RGG1',814,244,515);
+
+INSERT INTO AVIAO VALUES('24907563','PWW1',359,136,430);
+
+INSERT INTO AVIAO VALUES('26121698','PWW1',731,168,251);
+
+INSERT INTO AVIAO VALUES('24404409','711',757,193,343);
+
+INSERT INTO AVIAO VALUES('27582924','V-1',864,174,132);
+
+INSERT INTO AVIAO VALUES('20934438','V-1',965,50,315);
+
+INSERT INTO AVIAO VALUES('28070914','R-11',1021,271,194);
+
+INSERT INTO AVIAO VALUES('20958925','R-11',375,186,231);
+
+
+
+
+
+
+INSERT INTO FUNCIONARIO VALUES(1293,'02512323981');
