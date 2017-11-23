@@ -1,0 +1,315 @@
+INSERT INTO PASSAGEIRO VALUES('13631636','Crissiumal','Cruzaltense','Coronel Bicaco');
+
+INSERT INTO PASSAGEIRO VALUES('13494145','Chiapetta','Condor','Cacique Doble');
+
+INSERT INTO PASSAGEIRO VALUES('15241105','Capivari do Sul','Canudos do Vale','Coronel Barros');
+
+INSERT INTO PASSAGEIRO VALUES('15328658','Cotiporã','Capão do Leão','Campestre da Serra');
+
+INSERT INTO PASSAGEIRO VALUES('11206954','Campina das Missões','Capão do Cipó','Candiota');
+
+INSERT INTO PASSAGEIRO VALUES('11669853','Capitão','Coronel Barros','Cerro Grande do Sul');
+
+INSERT INTO PASSAGEIRO VALUES('19028516','Campo Bom','Coronel Pilar','Centenário');
+
+INSERT INTO PASSAGEIRO VALUES('17020179','Ciríaco','Capão da Canoa','Cambará do Sul');
+
+INSERT INTO PASSAGEIRO VALUES('16838898','Cacique Doble','Cerro Largo','Cristal do Sul');
+
+INSERT INTO PASSAGEIRO VALUES('14685957','Capão do Cipó','Chuvisca','Capela de Santana');
+
+INSERT INTO PASSAGEIRO VALUES('17687261','Coqueiros do Sul','Campinas do Sul','Campo Novo');
+
+INSERT INTO PASSAGEIRO VALUES('15288588','Cachoeirinha','Coronel Bicaco','Colinas');
+
+INSERT INTO PASSAGEIRO VALUES('15975008','Cambará do Sul','Coronel Barros','Cristal do Sul');
+
+INSERT INTO PASSAGEIRO VALUES('19916767','Capão do Cipó','Cerro Largo','Charqueadas');
+
+INSERT INTO PASSAGEIRO VALUES('15880224','Caçapava do Sul','Capão Bonito do Sul','Canoas');
+
+INSERT INTO PASSAGEIRO VALUES('10439727','Caxias do Sul','Crissiumal','Coronel Barros');
+
+INSERT INTO PASSAGEIRO VALUES('15511408','Coqueiro Baixo','Canela','Casca');
+
+INSERT INTO PASSAGEIRO VALUES('15881850','Cândido Godói','Coronel Pilar','Cerro Largo');
+
+INSERT INTO PASSAGEIRO VALUES('16385652','Coqueiros do Sul','Canudos do Vale','Condor');
+
+INSERT INTO PASSAGEIRO VALUES('19248661','Canguçu','Carlos Gomes','Cotiporã');
+
+INSERT INTO PASSAGEIRO VALUES('16079902','Capitão','Caraá','Canudos do Vale');
+
+INSERT INTO PASSAGEIRO VALUES('16436988','Cerro Grande','Coxilha','Cacique Doble');
+
+INSERT INTO PASSAGEIRO VALUES('19653355','Coronel Barros','Campestre da Serra','Chiapetta');
+
+INSERT INTO PASSAGEIRO VALUES('11408349','Cotiporã','Campo Bom','Coronel Pilar');
+
+INSERT INTO PASSAGEIRO VALUES('14813174','Capela de Santana','Cerrito','Campina das Missões');
+
+INSERT INTO PASSAGEIRO VALUES('15974968','Capão Bonito do Sul','Cristal','Cachoeira do Sul');
+
+INSERT INTO PASSAGEIRO VALUES('18537410','Cambará do Sul','Cidreira','Cerro Largo');
+
+INSERT INTO PASSAGEIRO VALUES('13763134','Carazinho','Capivari do Sul','Cambará do Sul');
+
+INSERT INTO PASSAGEIRO VALUES('13363887','Colinas','Cerro Largo','Cerro Branco');
+
+INSERT INTO PASSAGEIRO VALUES('16952203','Chuvisca','Chapada','Capela de Santana');
+
+INSERT INTO PASSAGEIRO VALUES('13739116','Cerro Grande','Canguçu','Capão da Canoa');
+
+INSERT INTO PASSAGEIRO VALUES('16852624','Carlos Gomes','Cristal','Cruzaltense');
+
+INSERT INTO PASSAGEIRO VALUES('17663024','Coqueiros do Sul','Cruzaltense','Cruzaltense');
+
+INSERT INTO PASSAGEIRO VALUES('10315200','Campestre da Serra','Canoas','Coronel Barros');
+
+INSERT INTO PASSAGEIRO VALUES('14945612','Cotiporã','Camaquã','Camargo');
+
+INSERT INTO PASSAGEIRO VALUES('18130469','Cotiporã','Centenário','Coronel Pilar');
+
+INSERT INTO PASSAGEIRO VALUES('15289967','Coqueiros do Sul','Coronel Bicaco','Coronel Bicaco');
+
+INSERT INTO PASSAGEIRO VALUES('11691419','Capão do Cipó','Candelária','Condor');
+
+INSERT INTO PASSAGEIRO VALUES('17004371','Cerro Largo','Carlos Barbosa','Campestre da Serra');
+
+INSERT INTO PASSAGEIRO VALUES('10254637','Chuvisca','Canoas','Constantina');
+
+INSERT INTO PASSAGEIRO VALUES('10746141','Cachoeirinha','Chiapetta','Caiçara');
+
+INSERT INTO PASSAGEIRO VALUES('10112062','Carazinho','Cachoeira do Sul','Carlos Gomes');
+
+INSERT INTO PASSAGEIRO VALUES('17280226','Condor','Catuípe','Cândido Godói');
+
+INSERT INTO PASSAGEIRO VALUES('10039496','Campo Bom','Cambará do Sul','Charrua');
+
+INSERT INTO PASSAGEIRO VALUES('15665959','Campinas do Sul','Coronel Pilar','Capão da Canoa');
+
+INSERT INTO PASSAGEIRO VALUES('10711881','Candelária','Constantina','Caibaté');
+
+INSERT INTO PASSAGEIRO VALUES('12309362','Cruzaltense','Catuípe','Crissiumal');
+
+INSERT INTO PASSAGEIRO VALUES('15111416','Canela','Campo Novo','Camargo');
+
+INSERT INTO PASSAGEIRO VALUES('10644074','Cachoeirinha','Cachoeirinha','Cacequi');
+
+INSERT INTO PASSAGEIRO VALUES('12238237','Cachoeira do Sul','Cerrito','Cristal do Sul');
+
+INSERT INTO PASSAGEIRO VALUES('16284074','Cruz Alta','Capão Bonito do Sul','Coronel Bicaco');
+
+INSERT INTO PASSAGEIRO VALUES('10245352','Coqueiros do Sul','Colorado','Campos Borges');
+
+INSERT INTO PASSAGEIRO VALUES('17002991','Carlos Barbosa','Capitão','Capão do Leão');
+
+INSERT INTO PASSAGEIRO VALUES('14169125','Cerrito','Cristal','Campos Borges');
+
+INSERT INTO PASSAGEIRO VALUES('12901944','Chuvisca','Carazinho','Cerrito');
+
+INSERT INTO PASSAGEIRO VALUES('11649911','Chuvisca','Carazinho','Caraá');
+
+INSERT INTO PASSAGEIRO VALUES('13631540','Campina das Missões','Crissiumal','Chiapetta');
+
+INSERT INTO PASSAGEIRO VALUES('13369351','Centenário','Campo Novo','Coronel Bicaco');
+
+INSERT INTO PASSAGEIRO VALUES('19758561','Cachoeirinha','Constantina','Cambará do Sul');
+
+INSERT INTO PASSAGEIRO VALUES('12339640','Cachoeira do Sul','Capela de Santana','Camaquã');
+
+INSERT INTO PASSAGEIRO VALUES('18766770','Campo Bom','Caxias do Sul','Charqueadas');
+
+INSERT INTO PASSAGEIRO VALUES('18697410','Charrua','Campinas do Sul','Cruz Alta');
+
+INSERT INTO PASSAGEIRO VALUES('15333473','Caraá','Campinas do Sul','Caibaté');
+
+INSERT INTO PASSAGEIRO VALUES('13184626','Capão da Canoa','Capão Bonito do Sul','Camargo');
+
+INSERT INTO PASSAGEIRO VALUES('10559441','Campestre da Serra','Cerro Largo','Capão do Cipó');
+
+INSERT INTO PASSAGEIRO VALUES('12072814','Catuípe','Chuí','Capela de Santana');
+
+INSERT INTO PASSAGEIRO VALUES('11425877','Cacique Doble','Catuípe','Cacique Doble');
+
+INSERT INTO PASSAGEIRO VALUES('19034223','Chiapetta','Camaquã','Caibaté');
+
+INSERT INTO PASSAGEIRO VALUES('14876238','Cerrito','Capão do Cipó','Cidreira');
+
+INSERT INTO PASSAGEIRO VALUES('13642456','Cerro Branco','Capão Bonito do Sul','Catuípe');
+
+INSERT INTO PASSAGEIRO VALUES('17735074','Coqueiro Baixo','Caxias do Sul','Carlos Gomes');
+
+INSERT INTO PASSAGEIRO VALUES('13214655','Ciríaco','Campos Borges','Carlos Barbosa');
+
+INSERT INTO PASSAGEIRO VALUES('10566024','Cristal','Coronel Bicaco','Cachoeira do Sul');
+
+INSERT INTO PASSAGEIRO VALUES('12652211','Colinas','Canela','Caxias do Sul');
+
+INSERT INTO PASSAGEIRO VALUES('12087095','Cambará do Sul','Charqueadas','Chiapetta');
+
+INSERT INTO PASSAGEIRO VALUES('16055375','Condor','Carlos Barbosa','Capão Bonito do Sul');
+
+INSERT INTO PASSAGEIRO VALUES('19417492','Cidreira','Campos Borges','Coronel Pilar');
+
+INSERT INTO PASSAGEIRO VALUES('15985238','Cachoeira do Sul','Capão da Canoa','Campos Borges');
+
+INSERT INTO PASSAGEIRO VALUES('12293063','Canoas','Cotiporã','Chapada');
+
+INSERT INTO PASSAGEIRO VALUES('19582697','Cruzaltense','Cruz Alta','Coqueiro Baixo');
+
+INSERT INTO PASSAGEIRO VALUES('12196759','Cotiporã','Candelária','Cruzaltense');
+
+INSERT INTO PASSAGEIRO VALUES('11973033','Cristal do Sul','Canela','Charqueadas');
+
+INSERT INTO PASSAGEIRO VALUES('16689026','Cidreira','Chuí','Camaquã');
+
+INSERT INTO PASSAGEIRO VALUES('12551570','Coqueiro Baixo','Condor','Cachoeirinha');
+
+INSERT INTO PASSAGEIRO VALUES('14250335','Campestre da Serra','Coronel Barros','Coqueiro Baixo');
+
+INSERT INTO PASSAGEIRO VALUES('17569691','Coqueiro Baixo','Cruzaltense','Capivari do Sul');
+
+INSERT INTO PASSAGEIRO VALUES('17923384','Carazinho','Caçapava do Sul','Cândido Godói');
+
+INSERT INTO PASSAGEIRO VALUES('19502562','Catuípe','Colorado','Coronel Barros');
+
+INSERT INTO PASSAGEIRO VALUES('18384636','Capão do Leão','Cacique Doble','Capela de Santana');
+
+INSERT INTO PASSAGEIRO VALUES('15592371','Camargo','Constantina','Charrua');
+
+INSERT INTO PASSAGEIRO VALUES('18654692','Caseiros','Candelária','Coxilha');
+
+INSERT INTO PASSAGEIRO VALUES('16595487','Carlos Barbosa','Charrua','Cerro Grande do Sul');
+
+INSERT INTO PASSAGEIRO VALUES('12249392','Campos Borges','Cerro Branco','Cândido Godói');
+
+INSERT INTO PASSAGEIRO VALUES('13473054','Cotiporã','Coqueiros do Sul','Carazinho');
+
+INSERT INTO PASSAGEIRO VALUES('12112928','Cristal','Cidreira','Cerro Grande');
+
+INSERT INTO PASSAGEIRO VALUES('16616388','Charqueadas','Ciríaco','Coronel Pilar');
+
+INSERT INTO PASSAGEIRO VALUES('14000546','Capão do Cipó','Camargo','Capão do Leão');
+
+INSERT INTO PASSAGEIRO VALUES('16805403','Coqueiros do Sul','Coqueiro Baixo','Cidreira');
+
+INSERT INTO PASSAGEIRO VALUES('17670957','Campo Bom','Colorado','Chiapetta');
+
+INSERT INTO PASSAGEIRO VALUES('17264208','Capão da Canoa','Catuípe','Caibaté');
+
+
+
+
+
+
+INSERT INTO AVIAO VALUES('23046292','R61','231','211','196');
+
+INSERT INTO AVIAO VALUES('25877604','P-1','263','2','253');
+
+INSERT INTO AVIAO VALUES('27085256','771','603','181','308');
+
+INSERT INTO AVIAO VALUES('29650896','771','159','213','272');
+
+INSERT INTO AVIAO VALUES('21847315','771','515','47','527');
+
+INSERT INTO AVIAO VALUES('28337197','771','130','45','321');
+
+INSERT INTO AVIAO VALUES('27783467','661','488','57','406');
+
+INSERT INTO AVIAO VALUES('25924059','1231','535','34','388');
+
+INSERT INTO AVIAO VALUES('25774599','RGG1','814','244','515');
+
+INSERT INTO AVIAO VALUES('24907563','PWW1','359','136','430');
+
+INSERT INTO AVIAO VALUES('26121698','PWW1','731','168','251');
+
+INSERT INTO AVIAO VALUES('24404409','711','757','193','343');
+
+INSERT INTO AVIAO VALUES('27582924','V-1','864','174','132');
+
+INSERT INTO AVIAO VALUES('20934438','V-1','965','50','315');
+
+INSERT INTO AVIAO VALUES('28070914','R-11','1021','271','194');
+
+INSERT INTO AVIAO VALUES('20958925','R-11','375','186','231');
+
+INSERT INTO AVIAO VALUES('29996427','A1','657','9','382');
+
+INSERT INTO AVIAO VALUES('26824650','B1','166','161','342');
+
+INSERT INTO AVIAO VALUES('26616095','C1','232','91','200');
+
+INSERT INTO AVIAO VALUES('29163695','D1','639','41','81');
+
+INSERT INTO AVIAO VALUES('25817127','E1','816','226','95');
+
+INSERT INTO AVIAO VALUES('27579004','F1','521','210','141');
+
+INSERT INTO AVIAO VALUES('24893888','G1','580','189','534');
+
+INSERT INTO AVIAO VALUES('26288484','H1','877','163','237');
+
+INSERT INTO AVIAO VALUES('29488924','I1','878','175','268');
+
+INSERT INTO AVIAO VALUES('24049763','J1','258','266','71');
+
+INSERT INTO AVIAO VALUES('24478883','K1','421','179','541');
+
+INSERT INTO AVIAO VALUES('22383988','L1','986','258','228');
+
+INSERT INTO AVIAO VALUES('22024891','M1','671','258','174');
+
+INSERT INTO AVIAO VALUES('26587843','N1','563','24','352');
+
+INSERT INTO AVIAO VALUES('21256956','O1','968','150','311');
+
+INSERT INTO AVIAO VALUES('20786032','P1','99','20','99');
+
+INSERT INTO AVIAO VALUES('28683124','Q1','153','262','208');
+
+INSERT INTO AVIAO VALUES('20734311','R1','451','15','413');
+
+INSERT INTO AVIAO VALUES('21837099','S1','177','46','519');
+
+INSERT INTO AVIAO VALUES('28181641','T1','405','132','434');
+
+INSERT INTO AVIAO VALUES('22968409','U1','1046','97','408');
+
+INSERT INTO AVIAO VALUES('29888283','V1','318','160','522');
+
+INSERT INTO AVIAO VALUES('25510412','X1','789','99','289');
+
+INSERT INTO AVIAO VALUES('29713027','Z1','220','80','378');
+
+
+
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException{
+		File arq = new File("arq2.txt");
+		PrintWriter writer = new PrintWriter("arq.txt", "UTF-8");
+		Scanner in = new Scanner(arq);
+		ArrayList<String> a = new ArrayList<String>();
+		Random r = new Random();
+		
+		while(in.hasNextLine()){
+			a.add(in.nextLine());
+		}
+		
+		for(int i = 0; i < 100; i++){
+			String aux = "INSERT INTO AVIAO VALUES('" + (r.nextInt(9999999) + 20000000) + "','" + 1 + "','" + (r.nextInt(1000) + 50) + "','" + r.nextInt(300) + "','" + (r.nextInt(500) + 50) + "');\n";
+			writer.println(aux);
+		}
+		writer.close();
+	}
+}
