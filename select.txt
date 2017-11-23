@@ -1,0 +1,8 @@
+combinar nome, bagagem, passagem, aviao
+
+select nome, bagagem_id, id_passagem, modelo as modelo_aviao from pessoa
+  inner join bagagem
+  on pessoa.cpf = bagagem.cpf
+    inner join passagem_aerea
+    on bagagem.cpf = passagem_aerea.cpf
+      inner join 
